@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
+}
+
+div#calc {
+    width: 400px;
+    padding: .5em;
+    background-color: #c4c4c4;
+    color: #000;
+    display: flex;
+    flex-direction: column; /* para o flex ficar um em baixo do outro */
+    border-radius: 3px;
+}
+div#calc h3 {
+    font-size: .8em;
+    font-weight: 300;
+    color: #666;
+}
+
+div#operations {
+    text-align: right;
+}
+
+div#previous-operation, div#current-operation {
+    padding: .2em;
+    overflow-wrap: break-word; /*quebrar a linha se necessário, sem atravessar*/
+    min-height: 1.6em; /*altura minima seja o suficiente para caber os 2 valores*/
+}
+
+div#previous-operation {
+    color: #777;
+}
+
+div#current-operation {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+div#buttons-container {
+    display: grid; /* para layout de colunas (por padrão, tem uma coluna*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*define 4 colunas no grid */
+    gap: 3px; /*Adiciona espaçamento entre os elementos contidos nele*/
+}
+
+div#buttons-container button {
+    border: 1px solid transparent;
+    border-radius: 0;
+    height: 4em;
+    font-size: 1.2em;
+    background-color: #dbdbdb;
+    cursor: pointer; /*Para o mouse mudar quando passar em cima*/
+}
+
+div#buttons-container button.number {
+    background-color: #f3f3f3;
+}
+
+div#buttons-container button:hover {
+    background-color: #bababa;
+    border-color: #999;
+}
+
+div#buttons-container button#equal-bnt {
+    grid-column: span 2; /*faz com que o elemento ocupe duas colunas*/
+    background-color: #75a5cb;
+}
+
+div#buttons-container button#equal-bnt:hover {
+    background-color: #3a91d8;
+}
